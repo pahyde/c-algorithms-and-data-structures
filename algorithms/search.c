@@ -30,7 +30,8 @@ int binSearchRec(int *nums, int length, int target) {
         return binSearchRec(nums, m, target);
     } else if (target > *(nums + m)) {
         //search right
-        return m + 1 + binSearchRec(nums + m + 1, m - ((length+1) % 2), target);
+        int subIndex = binSearchRec(nums + m + 1, m - ((length+1) % 2), target);
+        return subIndex > -1 ? m + 1 + subIndex : -1;
     }
     return -1;
 }
