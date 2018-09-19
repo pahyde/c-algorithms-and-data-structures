@@ -30,7 +30,6 @@ struct record *newRecord(int key, int value) {
 }
 
 void put(struct record **t, int key, int value) {
-    printf("put start\n");
     struct record *p = newRecord(key, value);
     int h = hash(key);
     struct record *i = *(t + h);
@@ -38,26 +37,26 @@ void put(struct record **t, int key, int value) {
        *(t + h) = p;
        return;
     }
-    while (i->next != NULL) {
+    while (i != NULL) {
+        if (i->key == key) {
+            i->value = value;
+            return;
+        }
         i = i->next;
     }
-    i->next = p;
-    printf("put end\n");
+    *i = *p;
 }
 
 
 
 struct record *get(struct record **t, int key) {
-    printf("get start\n");
     struct record *i = *(t + hash(key));
     if (i == NULL) {
         return NULL;
     }
-    printf("get mid\n");
     while (i->key != key) {
         i = i->next;
     }
-    printf("get end\n");
     return i;
 }
 
@@ -91,24 +90,19 @@ int main() {
     printArr(data, 36);
     printf("\n");
     for (int i = 0; i < 36; i++) {
-        int key = *(data + i);
-        struct record *c = get(t, key);
-        if (c == NULL) {
-            put(t, key, 1);
-        } else {
-            put(t, key, c->value + 1);
-        } 
+        struct record *c = get(t, *(data + i));
+        int num = *(data + i);
+        int count = c == NULL ? 1 : c->value + 1;
+        put(t, num, count);
     }
     printf("frequency of ints 0-9 after update: \n");
-    /*
     for (int i = 0; i < 10; i++) {
         struct record *c = get(t, i);
         
-        int num = 0;
+        int num = i;
         int count = c == NULL ? 0 : c->value;
         printf("num: %d, count: %d\n", num, count);
     }
-    */
     printf("\n");
 }
 
