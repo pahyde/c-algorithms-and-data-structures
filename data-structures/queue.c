@@ -63,7 +63,7 @@ int dequeue(struct queue *p) {
 }
 
 int main() {
-    printf("\nQueue (llist implementation) ---------------------------\n");
+    printf("\nQueue (llist implementation) --------------------------\n");
     struct queue *p = newQueue();
     
     printf("\nenqueue integers 0-9 to the queue.\n");
