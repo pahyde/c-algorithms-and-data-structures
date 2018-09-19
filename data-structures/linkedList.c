@@ -90,3 +90,19 @@ int main() {
     printf("index of node with data value 7: %d\n\n", findIndex(p1, 7));
     return 0;
 }
+
+/*
+Program output:
+Linked List ---------------------------
+
+add integers 0-9 to front of empty list.
+list_0: 9, 8, 7, 6, 5, 4, 3, 2, 1, 0
+
+add integers 0-9 to back of empty list.
+list_1: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+address of head node list_1: 0x7fb40ed000a0
+address of node with data value 7: 0x7fb40ed00110
+index of node with data value 7: 7
+
+*/

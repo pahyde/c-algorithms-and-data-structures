@@ -42,7 +42,7 @@ int pop(struct node **p) {
 int main() {
     printf("\nStack (llist implementation) ---------------------------\n");
     struct node *p = NULL;
-    
+
     printf("\npush integers 0-9 to the stack.\n");
     for (int i = 0; i < 10; i++) push(&p, i);
     printf("stack: ");
@@ -55,6 +55,19 @@ int main() {
     display(p);
     printf("\n\n");
 }
+
+/*
+Program output:
+Stack (llist implementation) ---------------------------
+
+push integers 0-9 to the stack.
+stack: 0 1 2 3 4 5 6 7 8 9 
+
+pop 5 values from the stack.
+popped values: 9 8 7 6 5 
+stack: 0 1 2 3 4
+
+*/
 
 
 

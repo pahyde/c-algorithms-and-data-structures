@@ -106,3 +106,28 @@ int main() {
     printf("\n");
 }
 
+
+/*
+Program output:
+Hash Table--------------------------
+
+simple int k,v pair hash table implementated with array of llists 
+Here the hash table is used to count the frequency
+of nums in an int array
+
+update count for integers 0,3,7,6,1,2,1,2,3,4,5,5,4,9,7,1,3,2,4,3,6,5,4,7,6,9,0,0,4,2,8,5,6,9,7,1
+
+frequency of ints 0-9 after update: 
+num: 0, count: 3
+num: 1, count: 4
+num: 2, count: 4
+num: 3, count: 4
+num: 4, count: 5
+num: 5, count: 4
+num: 6, count: 4
+num: 7, count: 4
+num: 8, count: 1
+num: 9, count: 3
+
+*/
+

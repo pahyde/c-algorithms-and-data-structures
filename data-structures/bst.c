@@ -64,3 +64,16 @@ int main() {
     printf("\n\n");
     return 0;
 }
+
+/*
+Program output:
+Binary Search Tree ---------------------
+
+add integers 2,4,0,7,5,6,3,9,8,1 to tree.
+tree values sorted: 0 1 2 3 4 5 6 7 8 9 
+
+delete and free all tree nodes from memory.
+tree nodes deleted: 10
+tree values after deletion:
+
+*/

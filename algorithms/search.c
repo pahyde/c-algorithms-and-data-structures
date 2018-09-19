@@ -96,5 +96,26 @@ int main() {
     return 0;
 }
 
+/*
+Program output:
+
+linear search
+data unsorted: 0, 3, 4, 2, 8, 5, 6, 9, 7, 1
+linear search int 7: 8
+linear search int -5: -1
+
+binary search (recursive)
+data sorted: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+binary search int 7: 7
+binary search int 1: 1
+binary search int -5: -1
+
+binary search (iterative)
+data sorted: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+binary search int 7: 7
+binary search int 1: 1
+binary search int -5: -1
+
+*/
 
 

@@ -79,6 +79,19 @@ int main() {
     printf("\n\n");
 }
 
+/*
+Program output:
+Queue (llist implementation) --------------------------
+
+enqueue integers 0-9 to the queue.
+queue: 0 1 2 3 4 5 6 7 8 9 
+
+dequeue 5 values from the queue.
+dequeued values: 0 1 2 3 4 
+queue: 5 6 7 8 9 
+
+*/
+
 
 
 
