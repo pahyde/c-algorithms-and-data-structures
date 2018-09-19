@@ -66,12 +66,12 @@ int main() {
     printf("\nQueue (llist implementation) ---------------------------\n");
     struct queue *p = newQueue();
     
-    printf("\nenqueue integers 0-9 to the stack.\n");
+    printf("\nenqueue integers 0-9 to the queue.\n");
     for (int i = 0; i < 10; i++) enqueue(p, i);
     printf("queue: ");
     display(p);
 
-    printf("\n\ndequeue 5 values from the stack.\n");
+    printf("\n\ndequeue 5 values from the queue.\n");
     printf("dequeued values: ");
     for (int i = 0; i < 5; i++) printf("%d ", dequeue(p));
     printf("\nqueue: ");
