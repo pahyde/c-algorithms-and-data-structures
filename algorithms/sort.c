@@ -41,6 +41,32 @@ void mergeSort(int *nums, int length) {
     }
 }
 
+//quick sort
+void swap(int *a, int *b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void quickSort(int* nums, int length) {
+    if (length < 2) {
+      return;
+    }
+    int pivot = *nums;
+    int *i = nums + 1;
+    int *j = nums + length - 1;
+    while (i <= j) {
+        while (i <= j && *i <= pivot) i++;
+        while (i <= j && *j > pivot)  j--;
+        if (i < j) {
+            swap(i, j);
+        } 
+    }
+    swap(nums, j);
+    quickSort(nums, i - nums);
+    quickSort(i, length - (i - nums));
+} 
+
 //print array fn
 void printArr(int* nums, int length) {
     for (int i = 0; i < length; i++) {
@@ -54,7 +80,7 @@ void printArr(int* nums, int length) {
 }
 
 int main() {
-    //linear search O(n)
+    //linear sort O(n)
     int data[10] = {0,3,4,2,8,5,6,9,7,1};
     printf("\ninsertion sort\n");
     printf("data unsorted: ");
@@ -63,7 +89,7 @@ int main() {
     printf("sorted:        ");
     printArr(data, 10);
 
-    //merge search O(logn)
+    //merge sort O(nlogn)
     int data1[10] = {0,3,4,2,8,5,6,9,7,1};
     printf("\nmerge sort\n");
     printf("data unsorted: ");
@@ -71,6 +97,15 @@ int main() {
     mergeSort(data1, 10);
     printf("sorted:        ");
     printArr(data1, 10);
+
+    //Quick sort O(nlogn)
+    int data2[10] = {0,3,4,2,8,5,6,9,7,1};
+    printf("\nquick sort\n");
+    printf("data unsorted: ");
+    printArr(data2, 10);
+    quickSort(data2, 10);
+    printf("sorted:        ");
+    printArr(data2, 10);
     printf("\n");
     return 0;
 }
@@ -83,6 +118,11 @@ data unsorted: 0, 3, 4, 2, 8, 5, 6, 9, 7, 1
 sorted:        0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
 merge sort
+data unsorted: 0, 3, 4, 2, 8, 5, 6, 9, 7, 1
+sorted:        0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+
+quick sort
 data unsorted: 0, 3, 4, 2, 8, 5, 6, 9, 7, 1
 sorted:        0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
