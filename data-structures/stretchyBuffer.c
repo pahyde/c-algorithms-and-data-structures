@@ -42,7 +42,7 @@ void buf_show(const int *b) {
 int main() {
     int *buf = NULL;
     
-    //push ints 0 - 10 to buffer
+    //push ints 0 - 9 to buffer
     for (int i = 0; i < 10; i++) buf_push(buf, i);
     
     //buffer is now: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
